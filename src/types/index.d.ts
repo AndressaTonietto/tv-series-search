@@ -29,3 +29,9 @@ interface TVShowDetails {
   url: string;
   image: { medium: string, original: string }
 }
+
+interface ImageProps {
+  alt: string;
+  src?: string;
+  width: number;
+}

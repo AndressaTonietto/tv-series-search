@@ -8,3 +8,7 @@ export const ImageFallback = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const StyledImg = styled.img`
+  border-radius: 6px;
+`;

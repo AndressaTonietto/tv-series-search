@@ -1,8 +1,8 @@
 import { cardWidth } from '../../config';
-import { ImageFallback } from './styles';
+import { ImageFallback, StyledImg } from './styles';
 
 const Image = ({ alt, src, width = cardWidth }: ImageProps) => {
-  if (src) return <img alt={alt} src={src} width={width} />;
+  if (src) return <StyledImg alt={alt} src={src} width={width} />;
   return <ImageFallback>No image available</ImageFallback>;
 };
 
