@@ -1,5 +1,3 @@
 import styled from 'styled-components';
 
-export const StyledLabel = styled.p`
-  padding-left: 1rem;
-`;
+export const StyledLabel = styled.div``;

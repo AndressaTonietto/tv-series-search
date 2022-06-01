@@ -21,6 +21,10 @@ export const TVShowsContainer = styled.div`
   scrollbar-width: none;
 `;
 
-export const Label = styled.p`
-  padding-left: 1rem;
+export const SearchContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
 `;

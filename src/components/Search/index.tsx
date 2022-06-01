@@ -32,6 +32,7 @@ const Search = ({
         id="search"
         value={search}
         onChange={e => setSearch(e.target.value)}
+        autoComplete="off"
       />
       <button type="submit">Search</button>
     </form>

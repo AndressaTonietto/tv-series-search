@@ -1,19 +1,18 @@
 import { useState } from 'react';
 import Card from '../../components/Card';
-import Link from '../../components/Link';
+import Label from '../../components/Label';
 import Search from '../../components/Search';
-import { Label, Nav, TVShowsContainer } from './styles';
+import { SearchContainer, TVShowsContainer } from './styles';
 
 const Home = () => {
   const [shows, setShows] = useState<[TVShowInfo] | []>([]);
 
   return (
     <div>
-      <Nav>
-        <Link to="/">TV Series Search</Link>
+      <SearchContainer>
+        <Label>Shows</Label>
         <Search setShows={setShows} />
-      </Nav>
-      <Label>Shows</Label>
+      </SearchContainer>
       <TVShowsContainer>
         {shows?.map(show => (
           <Card

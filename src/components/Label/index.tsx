@@ -1,6 +1,6 @@
 import { StyledLabel } from './styles';
 
-const Label = (children: any) => {
+const Label = ({ children }: { children: any }) => {
   return <StyledLabel>{children}</StyledLabel>;
 };
 
