@@ -11,10 +11,9 @@ const Details = () => {
     const getTVShowDetails = async () => {
       try {
         const res = await api.get(`shows/${id}`);
-        console.log(res.data);
         setDetails(res.data);
-      } catch (error) {
-        console.log(error);
+      } catch (e) {
+        console.log(e);
       }
     };
 
