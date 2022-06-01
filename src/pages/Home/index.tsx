@@ -2,23 +2,19 @@ import { useState } from 'react';
 import Card from '../../components/Card';
 import Link from '../../components/Link';
 import Search from '../../components/Search';
+import { Label, Nav, TVShowsContainer } from './styles';
 
 const Home = () => {
   const [shows, setShows] = useState<[TVShowInfo] | []>([]);
 
   return (
     <div>
-      <nav
-        style={{
-          borderBottom: 'solid 1px',
-          paddingBottom: '1rem',
-          display: 'flex',
-        }}
-      >
+      <Nav>
         <Link to="/">TV Series Search</Link>
         <Search setShows={setShows} />
-      </nav>
-      <div>
+      </Nav>
+      <Label>Shows</Label>
+      <TVShowsContainer>
         {shows?.map(show => (
           <Card
             key={show.show.id}
@@ -28,7 +24,7 @@ const Home = () => {
             rating={show.show.rating.average}
           />
         ))}
-      </div>
+      </TVShowsContainer>
     </div>
   );
 };
