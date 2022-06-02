@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Card from '../../components/Card';
 import Search from '../../components/Search';
 import { SubTitle } from '../../styles/typography';
@@ -6,19 +6,37 @@ import { SearchContainer, TVShowsContainer } from './styles';
 
 const Home = () => {
   const [shows, setShows] = useState<[TVShowInfo] | []>([]);
-  const [favoriteTvShows, setFavoriteTvShows] = useState<[TVShowInfo] | []>([]);
+  const [favoriteTvShows, setFavoriteTvShows] = useState<[TVShowInfo] | []>(
+    JSON.parse(localStorage.getItem('favoriteTvShows') || '') || []
+  );
 
   const updateFavorites = (tvShow: TVShowInfo) => {
-    if (favoriteTvShows.find(show => show === tvShow))
+    let updatedFavoriteTvShows: TVShowInfo[] | [] = [];
+
+    if (favoriteTvShows.find(show => show === tvShow)) {
+      updatedFavoriteTvShows = favoriteTvShows.filter(show => show !== tvShow);
       setFavoriteTvShows(
         prevState =>
           [...prevState.filter(show => show !== tvShow)] as [TVShowInfo] | []
       );
-    else
+    } else {
+      updatedFavoriteTvShows = [...favoriteTvShows, tvShow];
       setFavoriteTvShows(
         prevState => [...prevState, tvShow] as [TVShowInfo] | []
       );
+    }
+
+    localStorage.setItem(
+      'favoriteTvShows',
+      JSON.stringify(updatedFavoriteTvShows)
+    );
   };
+
+  useEffect(() => {
+    setFavoriteTvShows(
+      JSON.parse(localStorage.getItem('favoriteTvShows') || '')
+    );
+  }, []);
 
   const isTvShowFavorite = (tvShowId: number) =>
     favoriteTvShows.some(show => show.show.id === tvShowId);
