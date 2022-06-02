@@ -26,7 +26,7 @@ const Details = () => {
         src={details?.image.medium}
         width={250}
       />
-      <p>Genres: {details?.genres.map((genre: any) => genre).join(', ')}</p>
+      <p>Genres: {details?.genres.map((genre: string) => genre).join(', ')}</p>
       <p>Name: {details?.name}</p>
       <p>Average Runtime: {details?.averageRuntime} min</p>
       <p>Rating: {details?.rating.average}</p>
