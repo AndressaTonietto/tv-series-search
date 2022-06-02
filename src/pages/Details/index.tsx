@@ -26,12 +26,13 @@ const Details = () => {
     <>
       <SubTitle>{details?.name}</SubTitle>
       <DetailsContainer>
-        <img
-          alt={`${details?.name} poster`}
-          src={details?.image.medium}
-          width={250}
-          height="auto"
-        />
+        {details?.image?.medium && (
+          <img
+            alt={`${details?.name} poster`}
+            src={details?.image?.medium}
+            width={250}
+          />
+        )}
         <div>
           <TextContainer>
             <div>
@@ -55,11 +56,11 @@ const Details = () => {
           </TextContainer>
           <div>
             <div dangerouslySetInnerHTML={{ __html: details?.summary }} />
-            <a href={`${details?.url}`}>
-              <Text>
+            <Text>
+              <a href={`${details?.url}`}>
                 View web page <HiCursorClick />
-              </Text>
-            </a>
+              </a>
+            </Text>
           </div>
         </div>
       </DetailsContainer>

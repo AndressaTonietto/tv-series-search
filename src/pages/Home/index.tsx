@@ -32,23 +32,27 @@ const Home = () => {
       <TVShowsContainer>
         {shows?.map(show => (
           <Card
+            key={show.show.id}
             tvShow={show}
             updateFavorites={updateFavorites}
             isFavorite={isTvShowFavorite(show.show.id)}
           />
         ))}
       </TVShowsContainer>
-      <SubTitle>Favorites</SubTitle>
-      {favoriteTvShows && (
-        <TVShowsContainer>
-          {favoriteTvShows?.map(tvShow => (
-            <Card
-              tvShow={tvShow}
-              updateFavorites={updateFavorites}
-              isFavorite={true}
-            />
-          ))}
-        </TVShowsContainer>
+      {favoriteTvShows.length > 0 && (
+        <>
+          <SubTitle>Favorites</SubTitle>
+          <TVShowsContainer>
+            {favoriteTvShows?.map(tvShow => (
+              <Card
+                key={tvShow.show.id}
+                tvShow={tvShow}
+                updateFavorites={updateFavorites}
+                isFavorite={true}
+              />
+            ))}
+          </TVShowsContainer>
+        </>
       )}
     </div>
   );

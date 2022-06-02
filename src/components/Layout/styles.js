@@ -7,7 +7,7 @@ export const Nav = styled.nav`
 `;
 
 export const Separator = styled.div`
-  border-bottom: solid 1px;
+  border-bottom: solid 1px #f0ab02;
 `;
 
 export const Main = styled.div`

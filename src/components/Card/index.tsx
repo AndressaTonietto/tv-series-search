@@ -17,8 +17,8 @@ const Card = ({ tvShow, updateFavorites, isFavorite }: CardProps) => {
   };
 
   return (
-    <StyledCard>
-      <ImageContainer onClick={e => handleClickImage(e)}>
+    <StyledCard onClick={e => handleClickImage(e)}>
+      <ImageContainer>
         <Image
           alt={`${tvShow.show.name} poster`}
           src={tvShow.show.image?.original}

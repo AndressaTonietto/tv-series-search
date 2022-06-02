@@ -11,10 +11,11 @@ p {
 }
 
 a {
+  color: #f0ab02;
   text-decoration: none;
 }
 
 a:hover {
+  color: #f0ab02;
   text-decoration: underline;
-  color: #8b949e;
 }

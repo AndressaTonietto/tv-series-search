@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import useDebounce from '../../hooks/useDebounce';
 import api from '../../services/api';
+import { StyledInput } from './styles';
 
 const Search = ({
   setShows,
@@ -29,7 +30,7 @@ const Search = ({
   };
 
   return (
-    <input
+    <StyledInput
       type="text"
       id="search"
       value={filter}

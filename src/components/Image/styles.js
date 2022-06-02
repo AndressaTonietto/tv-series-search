@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { cardWidth } from '../../config';
+import { Label } from '../../styles/typography';
 
-export const ImageFallback = styled.div`
+export const ImageFallback = styled(Label)`
   width: ${cardWidth}px;
   height: 100%;
   display: flex;

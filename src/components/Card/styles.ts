@@ -8,6 +8,7 @@ export const StyledCard = styled.div`
   width: ${cardWidth}px;
   background-color: #161b22;
   border-radius: 6px;
+  cursor: pointer;
 `;
 
 export const Footer = styled.div`
@@ -26,6 +27,7 @@ position: absolute;
   top: 8px;
   right: 8px;
   cursor: pointer;
+  color: #c3c3c3;
 
   ${isFavorite &&
     css`
