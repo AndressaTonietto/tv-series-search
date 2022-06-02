@@ -23,6 +23,7 @@ The TV maze API has a free public API which can be used for this assignment.
 
 - search for TV Series
 - see TV Series details
+- add TV Series to a favorites show list
 
 ## Setup
 
