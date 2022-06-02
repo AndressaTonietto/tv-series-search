@@ -7,20 +7,20 @@ const Search = ({
 }: {
   setShows: React.Dispatch<React.SetStateAction<[TVShowInfo] | []>>;
 }) => {
-  const [search, setSearch] = useState('');
-  const debouncedValue = useDebounce<string>(search, 500);
+  const [filter, setFilter] = useState('');
+  const debouncedValue = useDebounce<string>(filter, 500);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value);
+    setFilter(event.target.value);
   };
 
   useEffect(() => {
-    handleSearch();
+    search();
   }, [debouncedValue]);
 
-  const handleSearch = async () => {
+  const search = async () => {
     try {
-      const url = `search/shows?q=${search}`;
+      const url = `search/shows?q=${filter}`;
       const res = await api.get(url);
       setShows(res.data);
     } catch (e) {
@@ -32,7 +32,7 @@ const Search = ({
     <input
       type="text"
       id="search"
-      value={search}
+      value={filter}
       onChange={handleChange}
       autoComplete="off"
     />
