@@ -35,6 +35,7 @@ const Search = ({
       value={filter}
       onChange={handleChange}
       autoComplete="off"
+      placeholder="Type to search"
     />
   );
 };
