@@ -2,8 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import { cardWidth } from '../../config';
 import Image from '../Image';
 import { Favorite, Footer, ImageContainer, StyledCard } from './styles';
+import { FaHeart } from 'react-icons/fa';
 
-const Card = ({ tvShow, updateFavorites }: CardProps) => {
+const Card = ({ tvShow, updateFavorites, isFavorite }: CardProps) => {
   const navigate = useNavigate();
 
   const handleClick = (e: any) => {
@@ -23,7 +24,9 @@ const Card = ({ tvShow, updateFavorites }: CardProps) => {
           src={tvShow.show.image?.original}
           width={cardWidth}
         />
-        <Favorite onClick={(e: any) => handleClick(e)}>🎨</Favorite>
+        <Favorite isFavorite={isFavorite} onClick={(e: any) => handleClick(e)}>
+          <FaHeart />
+        </Favorite>
       </ImageContainer>
       <Footer>
         <p>{tvShow.show.name}</p>

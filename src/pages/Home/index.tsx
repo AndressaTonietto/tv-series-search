@@ -20,6 +20,9 @@ const Home = () => {
       );
   };
 
+  const isTvShowFavorite = (tvShowId: number) =>
+    favoriteTvShows.some(show => show.show.id === tvShowId);
+
   return (
     <div>
       <SearchContainer>
@@ -28,14 +31,22 @@ const Home = () => {
       </SearchContainer>
       <TVShowsContainer>
         {shows?.map(show => (
-          <Card tvShow={show} updateFavorites={updateFavorites} />
+          <Card
+            tvShow={show}
+            updateFavorites={updateFavorites}
+            isFavorite={isTvShowFavorite(show.show.id)}
+          />
         ))}
       </TVShowsContainer>
       <Label>Favorites</Label>
       {favoriteTvShows && (
         <TVShowsContainer>
           {favoriteTvShows?.map(tvShow => (
-            <Card tvShow={tvShow} updateFavorites={updateFavorites} />
+            <Card
+              tvShow={tvShow}
+              updateFavorites={updateFavorites}
+              isFavorite={true}
+            />
           ))}
         </TVShowsContainer>
       )}

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { cardWidth } from '../../config';
 
 export const StyledCard = styled.div`
@@ -16,10 +16,22 @@ export const Footer = styled.div`
   padding: 0 5px;
 `;
 
-export const Favorite = styled.div`
-  position: absolute;
+export const Favorite = styled.div<{
+  isFavorite: boolean;
+}>`
+
+
+${({ isFavorite }) => css`
+position: absolute;
   top: 8px;
   right: 8px;
+  cursor: pointer;
+
+  ${isFavorite &&
+    css`
+      color: #8d0000;
+    `}
+  `}
 `;
 
 export const ImageContainer = styled.div`

@@ -10,6 +10,7 @@ interface TVShowInfo {
 interface CardProps {
   tvShow: TVShowInfo
   updateFavorites:(tvShow: TVShowInfo) => void;
+  isFavorite: boolean;
 }
 
 interface LinkProps {
