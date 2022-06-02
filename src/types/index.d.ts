@@ -15,7 +15,7 @@ interface CardProps {
 
 interface LinkProps {
   to: string;
-  children: any;
+  children: React.ReactNode | string;
 }
 
 interface TVShowDetails {

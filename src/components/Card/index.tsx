@@ -7,27 +7,26 @@ import { FaHeart } from 'react-icons/fa';
 const Card = ({ tvShow, updateFavorites, isFavorite }: CardProps) => {
   const navigate = useNavigate();
 
-  const handleClickFavorite = (e: any) => {
+  const handleClickFavorite = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
     e.stopPropagation();
     updateFavorites(tvShow);
   };
 
-  const handleClickCard = (e: any) => {
+  const handleClickCard = () => {
     navigate(`/details/${tvShow.show.id}`, { replace: true });
   };
 
   return (
-    <StyledCard onClick={e => handleClickCard(e)}>
+    <StyledCard onClick={handleClickCard}>
       <ImageContainer>
         <Image
           alt={`${tvShow.show.name} poster`}
           src={tvShow.show.image?.original}
           width={cardWidth}
         />
-        <Favorite
-          isFavorite={isFavorite}
-          onClick={(e: any) => handleClickFavorite(e)}
-        >
+        <Favorite isFavorite={isFavorite} onClick={e => handleClickFavorite(e)}>
           <FaHeart />
         </Favorite>
       </ImageContainer>
