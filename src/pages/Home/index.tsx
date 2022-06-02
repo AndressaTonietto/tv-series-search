@@ -6,6 +6,19 @@ import { SearchContainer, TVShowsContainer } from './styles';
 
 const Home = () => {
   const [shows, setShows] = useState<[TVShowInfo] | []>([]);
+  const [favoriteTvShows, setFavoriteTvShows] = useState<[TVShowInfo] | []>([]);
+
+  const updateFavorites = (tvShow: TVShowInfo) => {
+    if (favoriteTvShows.find(show => show === tvShow))
+      setFavoriteTvShows(
+        prevState =>
+          [...prevState.filter(show => show !== tvShow)] as [TVShowInfo] | []
+      );
+    else
+      setFavoriteTvShows(
+        prevState => [...prevState, tvShow] as [TVShowInfo] | []
+      );
+  };
 
   return (
     <div>
@@ -15,15 +28,17 @@ const Home = () => {
       </SearchContainer>
       <TVShowsContainer>
         {shows?.map(show => (
-          <Card
-            key={show.show.id}
-            id={show.show.id}
-            name={show.show.name}
-            image={show.show.image?.original}
-            rating={show.show.rating.average}
-          />
+          <Card tvShow={show} updateFavorites={updateFavorites} />
         ))}
       </TVShowsContainer>
+      <Label>Favorites</Label>
+      {favoriteTvShows && (
+        <TVShowsContainer>
+          {favoriteTvShows?.map(tvShow => (
+            <Card tvShow={tvShow} updateFavorites={updateFavorites} />
+          ))}
+        </TVShowsContainer>
+      )}
     </div>
   );
 };

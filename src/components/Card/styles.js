@@ -15,3 +15,14 @@ export const Footer = styled.div`
   justify-content: space-between;
   padding: 0 5px;
 `;
+
+export const Favorite = styled.div`
+  position: absolute;
+  top: 8px;
+  right: 8px;
+`;
+
+export const ImageContainer = styled.div`
+  height: 100%;
+  position: relative;
+`;

@@ -8,10 +8,8 @@ interface TVShowInfo {
 }
 
 interface CardProps {
-  id: number;
-  name: string;
-  image?: string;
-  rating: number;
+  tvShow: TVShowInfo
+  updateFavorites:(tvShow: TVShowInfo) => void;
 }
 
 interface LinkProps {

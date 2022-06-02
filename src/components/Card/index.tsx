@@ -1,17 +1,33 @@
+import { useNavigate } from 'react-router-dom';
 import { cardWidth } from '../../config';
 import Image from '../Image';
-import Link from '../Link';
-import { Footer, StyledCard } from './styles';
+import { Favorite, Footer, ImageContainer, StyledCard } from './styles';
 
-const Card = ({ id, name, image, rating }: CardProps) => {
+const Card = ({ tvShow, updateFavorites }: CardProps) => {
+  const navigate = useNavigate();
+
+  const handleClick = (e: any) => {
+    e.stopPropagation();
+    updateFavorites(tvShow);
+  };
+
+  const handleClickImage = (e: any) => {
+    navigate(`/details/${tvShow.show.id}`, { replace: true });
+  };
+
   return (
     <StyledCard>
-      <Link to={`/details/${id}`}>
-        <Image alt={`${name} poster`} src={image} width={cardWidth} />
-      </Link>
+      <ImageContainer onClick={e => handleClickImage(e)}>
+        <Image
+          alt={`${tvShow.show.name} poster`}
+          src={tvShow.show.image?.original}
+          width={cardWidth}
+        />
+        <Favorite onClick={(e: any) => handleClick(e)}>🎨</Favorite>
+      </ImageContainer>
       <Footer>
-        <p>{name}</p>
-        <p>{rating}</p>
+        <p>{tvShow.show.name}</p>
+        <p>{tvShow.show.rating.average}</p>
       </Footer>
     </StyledCard>
   );
