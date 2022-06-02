@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../../services/api';
+import { Label, SubTitle, Text } from '../../styles/typography';
+import { DetailsContainer, TextContainer } from './styles';
+import { HiCursorClick } from 'react-icons/hi';
 
 const Details = () => {
   const { id } = useParams();
@@ -20,20 +23,47 @@ const Details = () => {
   }, [id]);
 
   return (
-    <div>
-      <img
-        alt={`${details?.name} poster`}
-        src={details?.image.medium}
-        width={250}
-      />
-      <p>Genres: {details?.genres.map((genre: string) => genre).join(', ')}</p>
-      <p>Name: {details?.name}</p>
-      <p>Average Runtime: {details?.averageRuntime} min</p>
-      <p>Rating: {details?.rating.average}</p>
-      <p>Status: {details?.status}</p>
-      <p>Summary: {details?.summary}</p>
-      <a href={`${details?.url}`}>URL: {details?.url}</a>
-    </div>
+    <>
+      <SubTitle>{details?.name}</SubTitle>
+      <DetailsContainer>
+        <img
+          alt={`${details?.name} poster`}
+          src={details?.image.medium}
+          width={250}
+          height="auto"
+        />
+        <div>
+          <TextContainer>
+            <div>
+              <Label>Genres: </Label>
+              <Text>
+                {details?.genres.map((genre: string) => genre).join(', ')}
+              </Text>
+            </div>
+            <div>
+              <Label>Average Runtime: </Label>
+              <Text>{details?.averageRuntime} min</Text>
+            </div>
+            <div>
+              <Label>Rating: </Label>
+              <Text>{details?.rating.average}</Text>
+            </div>
+            <div>
+              <Label>Status: </Label>
+              <Text>{details?.status}</Text>
+            </div>
+          </TextContainer>
+          <div>
+            <div dangerouslySetInnerHTML={{ __html: details?.summary }} />
+            <a href={`${details?.url}`}>
+              <Text>
+                View web page <HiCursorClick />
+              </Text>
+            </a>
+          </div>
+        </div>
+      </DetailsContainer>
+    </>
   );
 };
 

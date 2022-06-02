@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Card from '../../components/Card';
-import Label from '../../components/Label';
 import Search from '../../components/Search';
+import { SubTitle } from '../../styles/typography';
 import { SearchContainer, TVShowsContainer } from './styles';
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <div>
       <SearchContainer>
-        <Label>Shows</Label>
+        <SubTitle>Shows</SubTitle>
         <Search setShows={setShows} />
       </SearchContainer>
       <TVShowsContainer>
@@ -38,7 +38,7 @@ const Home = () => {
           />
         ))}
       </TVShowsContainer>
-      <Label>Favorites</Label>
+      <SubTitle>Favorites</SubTitle>
       {favoriteTvShows && (
         <TVShowsContainer>
           {favoriteTvShows?.map(tvShow => (
