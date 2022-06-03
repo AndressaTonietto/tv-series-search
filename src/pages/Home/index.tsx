@@ -7,7 +7,7 @@ import { SearchContainer, TVShowsContainer } from './styles';
 const Home = () => {
   const [shows, setShows] = useState<[TVShowInfo] | []>([]);
   const [favoriteTvShows, setFavoriteTvShows] = useState<[TVShowInfo] | []>(
-    JSON.parse(localStorage.getItem('favoriteTvShows') || '') || []
+    JSON.parse(localStorage.getItem('favoriteTvShows') || '[]') || []
   );
 
   const updateFavorites = (tvShow: TVShowInfo) => {
@@ -34,7 +34,7 @@ const Home = () => {
 
   useEffect(() => {
     setFavoriteTvShows(
-      JSON.parse(localStorage.getItem('favoriteTvShows') || '')
+      JSON.parse(localStorage.getItem('favoriteTvShows') || '[]')
     );
   }, []);
 
