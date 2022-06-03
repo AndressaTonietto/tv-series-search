@@ -20,19 +20,18 @@ export const Footer = styled.div`
 export const Favorite = styled.div<{
   isFavorite: boolean;
 }>`
-
-
-${({ isFavorite }) => css`
-position: absolute;
-  top: 8px;
-  right: 8px;
-  cursor: pointer;
-  color: #c3c3c3;
-
-  ${isFavorite &&
+  ${({ isFavorite }) => css`
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    color: #c3c3c3;
+    padding: 5px;
+    
+    ${isFavorite &&
     css`
       color: #8d0000;
-    `}
+    `};
   `}
 `;
 
