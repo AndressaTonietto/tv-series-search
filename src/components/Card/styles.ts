@@ -9,6 +9,7 @@ export const StyledCard = styled.div`
   background-color: #161b22;
   border-radius: 6px;
   cursor: pointer;
+  margin-bottom: 10px;
 `;
 
 export const Footer = styled.div`
