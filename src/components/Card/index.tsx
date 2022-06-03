@@ -15,7 +15,7 @@ const Card = ({ tvShow, updateFavorites, isFavorite }: CardProps) => {
   };
 
   const handleClickCard = () => {
-    navigate(`/details/${tvShow.show.id}`, { replace: true });
+    navigate(`/details/${tvShow.show.id}`);
   };
 
   return (
