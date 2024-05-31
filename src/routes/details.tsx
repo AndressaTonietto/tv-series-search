@@ -1,5 +1,7 @@
+import TvShowDetails from "../components/tvShowDetails";
+
 const Details = () => {
-  return <div>details</div>;
+  return <TvShowDetails />;
 };
 
 export default Details;

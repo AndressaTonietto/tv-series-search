@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/details",
+    path: "tvShow/:tvShowId",
     element: <Details />,
   },
 ]);
