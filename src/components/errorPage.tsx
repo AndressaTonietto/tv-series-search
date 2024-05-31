@@ -7,6 +7,7 @@ const ErrorPage: React.FC = () => {
     <div>
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
+      <a href="/">Home page</a>
       <p>
         <i>
           {(error as Error)?.message ||

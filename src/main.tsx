@@ -5,18 +5,24 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Details from "./routes/details.tsx";
 import ErrorPage from "./components/errorPage.tsx";
 import Home from "./routes/home.tsx";
+import Layout from "./components/layout.tsx";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "tvShow/:tvShowId",
-    element: <Details />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "tvShow/:tvShowId",
+        element: <Details />,
+      },
+    ],
   },
 ]);
 
