@@ -1,3 +1,4 @@
+import TvShowCard from "./tvShowCard";
 import useDebounce from "../hooks/useDebounce";
 import useFetchTvSeries from "../hooks/useFetchSeries";
 import { useState } from "react";
@@ -26,8 +27,9 @@ const Search = () => {
         autoComplete="off"
         placeholder="Type to search"
       />
+      {data && data?.length === 0 && <p>no tv shows</p>}
       {data?.map(({ show }) => (
-        <p key={show.id}>{show.name}</p>
+        <TvShowCard key={show.id} show={show} />
       ))}
     </>
   );

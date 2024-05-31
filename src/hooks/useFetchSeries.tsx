@@ -7,13 +7,13 @@ interface UseFetchTvSeriesProps {
 }
 
 interface FetchTvSeries {
-  data: TVShowInfo[] | null;
+  data: TVShow[] | null;
   loading: boolean;
   error: string | null;
 }
 
 function useFetchTvSeries({ query }: UseFetchTvSeriesProps): FetchTvSeries {
-  const [data, setData] = useState<TVShowInfo[] | null>(null);
+  const [data, setData] = useState<TVShow[] | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -26,7 +26,7 @@ function useFetchTvSeries({ query }: UseFetchTvSeriesProps): FetchTvSeries {
 
       const url = `search/shows?q=${query}`;
       try {
-        const response = await api.get<TVShowInfo[]>(url);
+        const response = await api.get<TVShow[]>(url);
         setData(response.data);
       } catch (err) {
         // setError(err.message);

@@ -1,4 +1,4 @@
-interface TVShowInfo {
+interface TVShow {
   show: {
     id: number;
     name: string;
