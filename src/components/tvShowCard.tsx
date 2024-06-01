@@ -1,5 +1,6 @@
+import { Link, useNavigate } from "react-router-dom";
+
 import Image from "./image";
-import { useNavigate } from "react-router-dom";
 
 const TvShowCard = ({ show }: TVShow) => {
   const navigate = useNavigate();
@@ -9,11 +10,26 @@ const TvShowCard = ({ show }: TVShow) => {
   };
 
   return (
-    <div onClick={handleClick}>
-      <Image alt={`${show.name} poster`} src={show.image?.medium} />
-      <div>
-        <p>{show.name}</p>
+    <div
+      className="card card-compact card-side bg-base-100 shadow-xl cursor-pointer"
+      onClick={handleClick}
+    >
+      <figure>
+        <Image alt={`${show.name} poster`} src={show.image?.medium} />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">{show.name}</h2>
         <p>{show.rating.average}</p>
+        <div className="card-actions justify-end">
+          <Link
+            to={show.officialSite}
+            target="_blank"
+            className="btn btn-primary"
+            onClick={(e) => e.stopPropagation()}
+          >
+            Watch
+          </Link>
+        </div>
       </div>
     </div>
   );

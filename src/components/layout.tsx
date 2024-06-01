@@ -1,13 +1,23 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const Layout = () => {
+  const navigate = useNavigate();
   return (
-    <div>
-      <h1>
-        <a href="/">TV Series Search</a>
-      </h1>
-      <Outlet />
-    </div>
+    <>
+      <div className="navbar bg-base-100">
+        <button
+          className="btn btn-ghost text-2xl"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          TV Series Search
+        </button>
+      </div>
+      <div className="p-2">
+        <Outlet />
+      </div>
+    </>
   );
 };
 

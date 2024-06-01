@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import DOMPurify from "dompurify";
 import Image from "./image";
@@ -6,6 +6,7 @@ import useFetchTvSeriesDetails from "../hooks/useFetchTvSeriesDetails";
 
 const TvShowDetails = () => {
   const { tvShowId } = useParams();
+  const navigate = useNavigate();
   const {
     data: tvShow,
     loading,
@@ -20,30 +21,35 @@ const TvShowDetails = () => {
     return <p>{error} please reload the page or go to our home page</p>;
 
   return (
-    <div className="flex flex-col">
-      <Link to="/">go back</Link>
-      <div>
-        <h2>Title</h2>
-        {tvShow?.name}
+    <>
+      <button
+        className="btn btn-neutral btn-sm mt-2"
+        onClick={() => navigate("/")}
+      >
+        Go back
+      </button>
+      <div className="divider"></div>
+      <div className="flex flex-col mt-4">
+        <label className="text-xl">{tvShow?.name}</label>
+        <div className="flex items-center gap-2">
+          <label>Rating</label>
+          <div className="badge badge-success">{tvShow?.rating.average}</div>
+        </div>
+        <div className="flex flex-col gap-4">
+          <Image alt={`${tvShow?.name} poster`} src={tvShow?.image?.original} />
+          <div className="flex gap-2 flex-wrap">
+            {tvShow?.genres.map((genre) => (
+              <div className="badge badge-secondary">{genre}</div>
+            ))}
+          </div>
+          <div dangerouslySetInnerHTML={{ __html: sanitizedSummary }} />
+        </div>
+        <div className="flex items-center gap-2">
+          <label>Language:</label>
+          <div className="badge badge-accent">{tvShow?.language}</div>
+        </div>
       </div>
-      <div>
-        <h2>Rating</h2>
-        {tvShow?.rating.average}
-      </div>
-      <Image alt={`${tvShow?.name} poster`} src={tvShow?.image?.original} />
-      <div>
-        <h2>Summary</h2>
-        <div dangerouslySetInnerHTML={{ __html: sanitizedSummary }} />
-      </div>
-      <div>
-        <h2>Genre</h2>
-        {tvShow?.genres.map((genre) => genre).join(" | ")}
-      </div>
-      <div>
-        <h2>Language</h2>
-        {tvShow?.language}
-      </div>
-    </div>
+    </>
   );
 };
 
