@@ -20,12 +20,16 @@ const TvShowCard = ({ show }: TVShow) => {
       <div className="card-body">
         <h2 className="card-title">{show.name}</h2>
         <p>{show.rating.average}</p>
-        <div className="card-actions justify-end">
+        <div
+          className="card-actions justify-end"
+          onClick={(e) => e.stopPropagation()}
+        >
           <Link
             to={show.officialSite}
             target="_blank"
-            className="btn btn-primary"
-            onClick={(e) => e.stopPropagation()}
+            className={`btn btn-primary ${
+              !show.officialSite && "btn-disabled"
+            }`}
           >
             Watch
           </Link>
