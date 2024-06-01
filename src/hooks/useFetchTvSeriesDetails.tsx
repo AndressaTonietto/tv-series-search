@@ -29,8 +29,11 @@ function useFetchTvSeriesDetails({ id }: UseFetchTvSeriesProps): FetchTvSeries {
         const response = await api.get<TvShowDetails>(url);
         setData(response.data);
       } catch (err) {
-        // setError(err.message);
-        setError("en error has ocurred");
+        const error =
+          (err as Error)?.message ||
+          (err as { statusText?: string })?.statusText ||
+          "An error has occurred";
+        setError(error);
       } finally {
         setLoading(false);
       }

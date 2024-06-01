@@ -1,3 +1,4 @@
+import ErrorMessage from "./errorMessage";
 import Loading from "./loading";
 import TvShowCard from "./tvShowCard";
 import useDebounce from "../hooks/useDebounce";
@@ -16,7 +17,7 @@ const Search = () => {
   };
 
   if (loading) return <Loading />;
-  if (error) return <p>error</p>;
+  if (error) return <ErrorMessage error={error} />;
 
   return (
     <div className="flex flex-col gap-4">

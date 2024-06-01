@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 
 import DOMPurify from "dompurify";
+import ErrorMessage from "./errorMessage";
 import Image from "./image";
 import Loading from "./loading";
 import useFetchTvSeriesDetails from "../hooks/useFetchTvSeriesDetails";
@@ -18,8 +19,7 @@ const TvShowDetails = () => {
   const sanitizedSummary = DOMPurify.sanitize(tvShow?.summary || "");
 
   if (loading) return <Loading />;
-  if (error)
-    return <p>{error} please reload the page or go to our home page</p>;
+  if (error) return <ErrorMessage error={error} />;
 
   return (
     <>
