@@ -1,3 +1,4 @@
+import Loading from "./loading";
 import TvShowCard from "./tvShowCard";
 import useDebounce from "../hooks/useDebounce";
 import useFetchTvSeries from "../hooks/useFetchSeries";
@@ -14,7 +15,7 @@ const Search = () => {
     setQuery(event.target.value);
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>error</p>;
 
   return (
