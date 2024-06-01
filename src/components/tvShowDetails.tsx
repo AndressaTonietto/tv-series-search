@@ -30,12 +30,14 @@ const TvShowDetails = () => {
         Go back
       </button>
       <div className="divider"></div>
-      <div className="flex flex-col mt-4">
+      <div className="flex flex-col mt-4 gap-4">
         <label className="text-xl">{tvShow?.name}</label>
-        <div className="flex items-center gap-2">
-          <label>Rating</label>
-          <div className="badge badge-success">{tvShow?.rating.average}</div>
-        </div>
+        {tvShow?.rating.average && (
+          <div className="flex items-center gap-2">
+            <label>Rating:</label>
+            <div className="badge badge-success">{tvShow?.rating.average}</div>
+          </div>
+        )}
         <div className="flex flex-col gap-4">
           <Image alt={`${tvShow?.name} poster`} src={tvShow?.image?.original} />
           <div className="flex gap-2 flex-wrap">
