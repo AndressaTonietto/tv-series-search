@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage renders correctly 1`] = `
+<div
+  className="toast toast-center min-w-full"
+>
+  <div
+    className="alert alert-error text-wrap"
+  >
+    <span>
+      test error message
+      . Please try again or go to our
+       
+      <a
+        className="link"
+        data-testid="home-page-link"
+        href="/"
+        onClick={[Function]}
+      >
+        home page
+      </a>
+      .
+    </span>
+  </div>
+</div>
+`;

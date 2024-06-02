@@ -10,7 +10,7 @@ const ErrorMessage = ({ error }: ErrorMessageProps) => {
       <div className="alert alert-error text-wrap">
         <span>
           {error}. Please try again or go to our{" "}
-          <Link className="link" to="/">
+          <Link data-testid="home-page-link" className="link" to="/">
             home page
           </Link>
           .
