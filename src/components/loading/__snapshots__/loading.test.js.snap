@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading Component renders correctly 1`] = `
+<div
+  className="flex justify-center"
+>
+  <span
+    className="loading loading-spinner loading-sm"
+    data-testid="loading-spinner"
+  />
+</div>
+`;
