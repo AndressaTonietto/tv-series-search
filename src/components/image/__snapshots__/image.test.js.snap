@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image renders correctly with src 1`] = `
+<img
+  alt="test alt text"
+  className="max-w-52"
+  src="test-src.jpg"
+/>
+`;
+
+exports[`Image renders correctly without src 1`] = `
+<div
+  className="aspect-[2/3] justify-center max-w-52 flex items-center px-2 badge-neutral"
+>
+  No image available
+</div>
+`;

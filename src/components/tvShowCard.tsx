@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
-import Image from "./image";
+import Image from "./image/image";
 
 const TvShowCard = ({ show }: TVShow) => {
   const navigate = useNavigate();

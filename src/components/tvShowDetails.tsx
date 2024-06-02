@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import DOMPurify from "dompurify";
 import ErrorMessage from "./errorMessage/errorMessage";
-import Image from "./image";
+import Image from "./image/image";
 import Loading from "./loading/loading";
 import useFetchTvSeriesDetails from "../hooks/useFetchTvSeriesDetails";
 
