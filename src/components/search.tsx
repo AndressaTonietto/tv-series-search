@@ -1,5 +1,5 @@
-import ErrorMessage from "./errorMessage";
-import Loading from "./loading";
+import ErrorMessage from "./errorMessage/errorMessage";
+import Loading from "./loading/loading";
 import TvShowCard from "./tvShowCard";
 import useDebounce from "../hooks/useDebounce";
 import useFetchTvSeries from "../hooks/useFetchSeries";

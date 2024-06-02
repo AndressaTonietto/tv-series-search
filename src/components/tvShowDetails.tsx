@@ -1,9 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
 
 import DOMPurify from "dompurify";
-import ErrorMessage from "./errorMessage";
+import ErrorMessage from "./errorMessage/errorMessage";
 import Image from "./image";
-import Loading from "./loading";
+import Loading from "./loading/loading";
 import useFetchTvSeriesDetails from "../hooks/useFetchTvSeriesDetails";
 
 const TvShowDetails = () => {
