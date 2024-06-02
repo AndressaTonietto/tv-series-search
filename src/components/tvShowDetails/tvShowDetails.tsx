@@ -1,10 +1,10 @@
 import { useNavigate, useParams } from "react-router-dom";
 
 import DOMPurify from "dompurify";
-import ErrorMessage from "./errorMessage/errorMessage";
-import Image from "./image/image";
-import Loading from "./loading/loading";
-import useFetchTvSeriesDetails from "../hooks/useFetchTvSeriesDetails";
+import ErrorMessage from "../errorMessage/errorMessage";
+import Image from "../image/image";
+import Loading from "../loading/loading";
+import useFetchTvSeriesDetails from "../../hooks/useFetchTvSeriesDetails";
 
 const TvShowDetails = () => {
   const { tvShowId } = useParams();
@@ -42,7 +42,9 @@ const TvShowDetails = () => {
           <Image alt={`${tvShow?.name} poster`} src={tvShow?.image?.original} />
           <div className="flex gap-2 flex-wrap">
             {tvShow?.genres.map((genre) => (
-              <div className="badge badge-secondary">{genre}</div>
+              <div key={genre} className="badge badge-secondary">
+                {genre}
+              </div>
             ))}
           </div>
           <div dangerouslySetInnerHTML={{ __html: sanitizedSummary }} />

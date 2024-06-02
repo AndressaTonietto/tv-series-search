@@ -1,4 +1,4 @@
-import TvShowDetails from "../components/tvShowDetails";
+import TvShowDetails from "../components/tvShowDetails/tvShowDetails";
 
 const Details = () => {
   return <TvShowDetails />;

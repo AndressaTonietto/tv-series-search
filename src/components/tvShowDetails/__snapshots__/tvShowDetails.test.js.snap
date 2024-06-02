@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TvShowDetails renders correctly 1`] = `
+[
+  <button
+    className="btn btn-neutral btn-sm mt-2"
+    onClick={[Function]}
+  >
+    Go back
+  </button>,
+  <div
+    className="divider"
+  />,
+  <div
+    className="flex flex-col mt-4 gap-4"
+  >
+    <label
+      className="text-xl"
+    >
+      The IT Crowd
+    </label>
+    <div
+      className="flex items-center gap-2"
+    >
+      <label>
+        Rating:
+      </label>
+      <div
+        className="badge badge-success"
+      >
+        8.7
+      </div>
+    </div>
+    <div
+      className="flex flex-col gap-4"
+    >
+      <img
+        alt="The IT Crowd poster"
+        className="max-w-52"
+        src="test-image-url"
+      />
+      <div
+        className="flex gap-2 flex-wrap"
+      >
+        <div
+          className="badge badge-secondary"
+        >
+          Drama
+        </div>
+        <div
+          className="badge badge-secondary"
+        >
+          Thriller
+        </div>
+      </div>
+      <div
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<p>Test summary</p>",
+          }
+        }
+      />
+    </div>
+    <div
+      className="flex items-center gap-2"
+    >
+      <label>
+        Language:
+      </label>
+      <div
+        className="badge badge-accent"
+      >
+        English
+      </div>
+    </div>
+  </div>,
+]
+`;
