@@ -1,6 +1,6 @@
 import ErrorMessage from "../errorMessage/errorMessage";
 import Loading from "../loading/loading";
-import TvShowCard from "../tvShowCard";
+import TvShowCard from "../tvShowCard/tvShowCard";
 import useDebounce from "../../hooks/useDebounce";
 import useFetchTvSeries from "../../hooks/useFetchSeries";
 import { useState } from "react";

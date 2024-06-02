@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TvShowCard renders correctly 1`] = `
+<div
+  className="card card-compact min-h-56 card-side bg-base-100 shadow-xl cursor-pointer"
+  onClick={[Function]}
+>
+  <figure>
+    <img
+      alt="The IT Crowd poster"
+      className="max-w-52"
+      src="test-image-url"
+    />
+  </figure>
+  <div
+    className="card-body"
+  >
+    <h2
+      className="card-title"
+    >
+      The IT Crowd
+    </h2>
+    <p>
+      8.7
+    </p>
+    <div
+      className="card-actions justify-end"
+      onClick={[Function]}
+    >
+      <a
+        className="btn btn-primary false"
+        href="https://guthib.com/"
+        target="_blank"
+      >
+        Watch
+      </a>
+    </div>
+  </div>
+</div>
+`;
