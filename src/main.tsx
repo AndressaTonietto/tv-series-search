@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Details from "./routes/details.tsx";
 import ErrorPage from "./routes/error.tsx";
 import Home from "./routes/home.tsx";
-import Layout from "./components/layout.tsx";
+import Layout from "./components/layout/layout.tsx";
 import React from "react";
 import ReactDOM from "react-dom/client";
 

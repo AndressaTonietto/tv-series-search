@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout renders correctly 1`] = `
+<div
+  className="min-h-screen"
+>
+  <div
+    className="navbar bg-base-100"
+  >
+    <button
+      className="btn btn-ghost text-2xl"
+      onClick={[Function]}
+    >
+      TV Series Search
+    </button>
+  </div>
+  <div
+    className="p-2"
+  />
+</div>
+`;
