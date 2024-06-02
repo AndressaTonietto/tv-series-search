@@ -6,8 +6,12 @@ interface ImageProps {
 
 const Image = ({ alt, src, className }: ImageProps) => {
   if (src)
-    return <img alt={alt} src={src} width="auto" className={className} />;
-  return <label>No image available</label>;
+    return <img alt={alt} src={src} className={`max-w-52 ${className}`} />;
+  return (
+    <div className="aspect-[2/3] justify-center max-w-52 flex items-center px-2 badge-neutral">
+      No image available
+    </div>
+  );
 };
 
 export default Image;
