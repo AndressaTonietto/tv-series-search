@@ -10,4 +10,17 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+  <script type="text/javascript">
+    var slowLoad = window.setTimeout(function () {
+      alert("Your network connection seems to be slow.");
+    }, 7000);
+
+    window.addEventListener(
+      "load",
+      function () {
+        window.clearTimeout(slowLoad);
+      },
+      false
+    );
+  </script>
 </html>
