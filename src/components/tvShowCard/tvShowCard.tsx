@@ -11,7 +11,7 @@ const TvShowCard = ({ show }: TVShow) => {
 
   return (
     <div
-      className="card card-compact min-h-56 card-side bg-base-100 shadow-xl cursor-pointer"
+      className="card card-compact min-h-56 card-side bg-base-100 shadow-xl cursor-pointer md:w-1/2 lg:w-1/3 xl:w-1/4"
       onClick={handleClick}
     >
       <figure>
