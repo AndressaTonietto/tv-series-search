@@ -1,30 +1,65 @@
-# React + TypeScript + Vite
+# TV Series Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Simple TV Series Search created with React.js and TypeScript.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [General info](#general-info)
+- [Features](#features)
+- [Setup](#setup)
+- [Tests](#tests)
+- [Technologies](#technologies)
+- [Status](#status)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## General info
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Home assignment to create a web application which allows the user to search for
+information about TV Series, using the [TV maze API](https://www.tvmaze.com/api). It should
+show the search results in a list and allow the user to see more detailed information in
+another view.
+The TV maze API has a free public API which can be used for this assignment.
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Search for TV Series
+- See TV Series details
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Setup
+
+To run this project locally:
+
+1. Clone the repo
+
+2. Go to the project directory
+
+3. Install packages
+
+4. Run the app in development mode
+
+5. Open [http://localhost:5173](http://localhost:5173) to view it in the browser
+
+## Tests
+
+To run the tests:
+
+1. Go to the project directory
+2. Run `npm run test`
+
+The tests cover the functionality of the TV Series Search feature, ensuring that the search results are displayed correctly and that the user can view detailed information about a TV series.
+
+## Technologies
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Jest](https://jestjs.io/)
+- [tailwindcss](https://tailwindcss.com//)
+- [daisyUI](https://daisyui.com/)
+
+## Status
+
+The project is still being developed.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
