@@ -30,28 +30,34 @@ const TvShowDetails = () => {
         Go back
       </button>
       <div className="divider"></div>
-      <div className="flex flex-col mt-4 gap-4">
-        <label className="text-xl">{tvShow?.name}</label>
-        {tvShow?.rating.average && (
-          <div className="flex items-center gap-2">
-            <label>Rating:</label>
-            <div className="badge badge-success">{tvShow?.rating.average}</div>
-          </div>
-        )}
-        <div className="flex flex-col gap-4">
-          <Image alt={`${tvShow?.name} poster`} src={tvShow?.image?.original} />
-          <div className="flex gap-2 flex-wrap">
-            {tvShow?.genres.map((genre) => (
-              <div key={genre} className="badge badge-secondary">
-                {genre}
+      <div className="md:max-w-2xl lg:max-w-4xl mx-auto">
+        <div className="flex flex-col mt-4 gap-4 md:mx-10">
+          <label className="text-xl">{tvShow?.name}</label>
+          {tvShow?.rating.average && (
+            <div className="flex items-center gap-2">
+              <label>Rating:</label>
+              <div className="badge badge-success">
+                {tvShow?.rating.average}
               </div>
-            ))}
+            </div>
+          )}
+
+          <div className="flex flex-col gap-4 md:block">
+            <Image
+              alt={`${tvShow?.name} poster`}
+              src={tvShow?.image?.original}
+              className="md:float-right"
+            />
+            <div dangerouslySetInnerHTML={{ __html: sanitizedSummary }} />
+            <div className="flex items-center gap-2 md:mt-4">
+              <div className="badge badge-accent">{tvShow?.language}</div>
+              {tvShow?.genres.map((genre) => (
+                <div key={genre} className="badge badge-secondary">
+                  {genre}
+                </div>
+              ))}
+            </div>
           </div>
-          <div dangerouslySetInnerHTML={{ __html: sanitizedSummary }} />
-        </div>
-        <div className="flex items-center gap-2">
-          <label>Language:</label>
-          <div className="badge badge-accent">{tvShow?.language}</div>
         </div>
       </div>
     </>

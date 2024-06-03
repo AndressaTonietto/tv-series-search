@@ -11,19 +11,17 @@ const TvShowCard = ({ show }: TVShow) => {
 
   return (
     <div
-      className="card card-compact min-h-56 card-side bg-base-100 shadow-xl cursor-pointer md:w-1/2 lg:w-1/3 xl:w-1/4"
+      className="card card-compact min-h-72 md:card-side bg-base-100 shadow-xl w-96 cursor-pointer md:w-fit lg:w-1/3 xl:w-1/4"
       onClick={handleClick}
     >
-      <figure>
-        <Image alt={`${show.name} poster`} src={show.image?.medium} />
-      </figure>
-      <div className="card-body">
+      <Image alt={`${show.name} poster`} src={show.image?.medium} />
+      <div className="card-body justify-between">
         <h2 className="card-title">{show.name}</h2>
-        <p>{show.rating.average}</p>
         <div
-          className="card-actions justify-end"
+          className="card-actions items-center justify-between"
           onClick={(e) => e.stopPropagation()}
         >
+          <span>{show.rating.average}</span>
           <Link
             to={show.officialSite}
             target="_blank"

@@ -53,7 +53,7 @@ const Search = () => {
           </div>
         </div>
       )}
-      <div className="flex flex-col md:flex-row md:flex-wrap gap-4 justify-center">
+      <div className="flex flex-col md:flex-row md:flex-wrap gap-4 justify-center items-center">
         {data?.map(({ show }) => (
           <TvShowCard key={show.id} show={show} />
         ))}
