@@ -11,10 +11,14 @@ const TvShowCard = ({ show }: TVShow) => {
 
   return (
     <div
-      className="card card-compact min-h-72 md:card-side bg-base-100 shadow-xl w-96 cursor-pointer md:w-fit lg:w-1/3 xl:w-1/4"
+      className="card card-compact min-h-72 md:card-side bg-base-100 shadow-xl w-full cursor-pointer md:w-fit lg:w-1/3 xl:w-1/4"
       onClick={handleClick}
     >
-      <Image alt={`${show.name} poster`} src={show.image?.medium} />
+      <Image
+        alt={`${show.name} poster`}
+        src={show.image?.medium}
+        className="self-center"
+      />
       <div className="card-body justify-between">
         <h2 className="card-title">{show.name}</h2>
         <div
@@ -22,15 +26,20 @@ const TvShowCard = ({ show }: TVShow) => {
           onClick={(e) => e.stopPropagation()}
         >
           <span>{show.rating.average}</span>
-          <Link
-            to={show.officialSite}
-            target="_blank"
-            className={`btn btn-primary ${
-              !show.officialSite && "btn-disabled"
-            }`}
+          <div
+            className={`${!show.officialSite && "tooltip"}`}
+            data-tip="not available"
           >
-            Watch
-          </Link>
+            <Link
+              to={show.officialSite}
+              target="_blank"
+              className={`btn btn-primary ${
+                !show.officialSite && "btn-disabled"
+              }`}
+            >
+              Watch
+            </Link>
+          </div>
         </div>
       </div>
     </div>
