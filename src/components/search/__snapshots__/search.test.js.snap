@@ -43,7 +43,7 @@ exports[`Search renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="flex flex-col md:flex-row md:flex-wrap gap-4 justify-center"
+    className="flex flex-col md:flex-row md:flex-wrap gap-4 justify-center items-center"
   />
 </div>
 `;

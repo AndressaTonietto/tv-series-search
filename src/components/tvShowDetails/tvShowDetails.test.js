@@ -55,7 +55,6 @@ describe("TvShowDetails", () => {
         testShow.image.original
       );
       expect(screen.getByText("Test summary")).toBeInTheDocument();
-      expect(screen.getByText("Language:")).toBeInTheDocument();
       expect(screen.getByText(testShow.language)).toBeInTheDocument();
       testShow.genres.forEach((genre) => {
         expect(screen.getByText(genre)).toBeInTheDocument();

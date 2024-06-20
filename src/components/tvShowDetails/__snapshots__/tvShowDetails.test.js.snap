@@ -12,65 +12,62 @@ exports[`TvShowDetails renders correctly 1`] = `
     className="divider"
   />,
   <div
-    className="flex flex-col mt-4 gap-4"
+    className="md:max-w-2xl lg:max-w-4xl mx-auto"
   >
-    <label
-      className="text-xl"
-    >
-      The IT Crowd
-    </label>
     <div
-      className="flex items-center gap-2"
+      className="flex flex-col mt-4 gap-4 md:mx-10"
     >
-      <label>
-        Rating:
+      <label
+        className="text-xl"
+      >
+        The IT Crowd
       </label>
       <div
-        className="badge badge-success"
+        className="flex items-center gap-2"
       >
-        8.7
-      </div>
-    </div>
-    <div
-      className="flex flex-col gap-4"
-    >
-      <img
-        alt="The IT Crowd poster"
-        className="max-w-52"
-        src="test-image-url"
-      />
-      <div
-        className="flex gap-2 flex-wrap"
-      >
+        <label>
+          Rating:
+        </label>
         <div
-          className="badge badge-secondary"
+          className="badge badge-success"
         >
-          Drama
-        </div>
-        <div
-          className="badge badge-secondary"
-        >
-          Thriller
+          8.7
         </div>
       </div>
       <div
-        dangerouslySetInnerHTML={
-          {
-            "__html": "<p>Test summary</p>",
+        className="flex flex-col gap-4 md:block"
+      >
+        <img
+          alt="The IT Crowd poster"
+          className="max-w-52 min-h-72 shrink-0 md:float-right"
+          src="test-image-url"
+        />
+        <div
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<p>Test summary</p>",
+            }
           }
-        }
-      />
-    </div>
-    <div
-      className="flex items-center gap-2"
-    >
-      <label>
-        Language:
-      </label>
-      <div
-        className="badge badge-accent"
-      >
-        English
+        />
+        <div
+          className="flex items-center gap-2 md:mt-4"
+        >
+          <div
+            className="badge badge-accent"
+          >
+            English
+          </div>
+          <div
+            className="badge badge-secondary"
+          >
+            Drama
+          </div>
+          <div
+            className="badge badge-secondary"
+          >
+            Thriller
+          </div>
+        </div>
       </div>
     </div>
   </div>,
